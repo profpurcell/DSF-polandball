@@ -1,4 +1,4 @@
-#darren practgice on commit
+#darren practice on commit
 # DSF-polandball
 DSF - Polandball Project
 
