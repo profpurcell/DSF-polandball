@@ -2,7 +2,7 @@
 DSF - Polandball Project
 
 ## Collection Notes
-
+As of 9/17:
 - collecting after one week should be best
 - make note of meta/announcement posts
 
