@@ -8,9 +8,9 @@ import datetime as dt
 
 def main():
     # set up connection
-    reddit = praw.Reddit(client_id="7HuVGrxZwvj0fA",
-        client_secret="07pRQvVQW9suS_oPCDeYGRp4yeQ",
-        user_agent="jupyter_notebook:test_reddit_api /u/Asterisk13")
+    reddit = praw.Reddit(client_id="",
+        client_secret="",
+        user_agent="")
     
     api = PushshiftAPI(reddit)
     start = int(dt.datetime(2020,10,2).timestamp())
