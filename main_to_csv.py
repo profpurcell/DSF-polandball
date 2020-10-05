@@ -52,7 +52,8 @@ def getSubmissionData(submission):
         "sub_fullname": submission.name,
         "author": submission.author,
         "title": submission.title,
-        "time": strftime("%m/%d/%Y %H:%M:%S", gmtime(submission.created_utc)),
+        "gmt_time": strftime("%m/%d/%Y %H:%M:%S", gmtime(submission.created_utc)),
+        "unix_time": submission.created_utc,
         "num_comments": submission.num_comments,
         "upvotes": submission.score,
         "ratio": submission.upvote_ratio,
@@ -72,7 +73,7 @@ def getSubmissionData(submission):
     return record
     
 def saveImage(submission):
-    if submission.url.split(".")[-1] in ["png", "jpg", "gif", "tif", "bmp"]:
+    if (submission.selftext != "[deleted]") and (submission.url.split(".")[-1] in ["png", "jpg", "gif", "tif", "bmp"]):
         image_extension = submission.url.split(".")[-1]
         resp = requests.get(submission.url)
         with open("raw_comics/" + submission.id + "." + image_extension, "wb") as f:
@@ -80,8 +81,9 @@ def saveImage(submission):
 
 def getCommentData(comment):
     record = {
-        "scraped": strftime("%m/%d/%Y %H:%M:%S", gmtime()),
-        "time": strftime("%m/%d/%Y %H:%M:%S", gmtime(comment.created_utc)),
+        "scraped_dat": strftime("%m/%d/%Y %H:%M:%S", gmtime()),
+        "gmt_time": strftime("%m/%d/%Y %H:%M:%S", gmtime(comment.created_utc)),
+        "unix_time": comment.created_utc,
         "sub_id": comment.submission,
         "sub_fullname": comment.link_id,
         "parent_id": comment.parent_id,
@@ -133,7 +135,7 @@ def getAwards(item, d):
     d["total_awards"] = item.total_awards_received
     # value of all awards
     value = 0
-    for award in s.all_awardings:
+    for award in item.all_awardings:
         value = value + (award['count']*award['coin_price'])
     d["total_award_value"] = value
     return d
@@ -142,7 +144,7 @@ def getAwardData(item):
     awardList = []
     for award in item.all_awardings:
         record = {
-            "item_id": item.fullname,
+            "item_fullname": item.fullname,
             "award_name": award['name'],
             "award_count": award['count'],
             "award_price": award['coin_price']
