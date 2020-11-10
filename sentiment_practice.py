@@ -32,7 +32,7 @@ def analyze_sentiment(row):
     positive_sentiment.append(scores["pos"])
     return(scores["compound"])
 
-# Create new columna that contain each sentiment score
+# Create new columns that contain each sentiment score
 comment_df["compound_sentiment"] = comment_df.apply(analyze_sentiment, axis = 1)
 comment_df["negative_sentiment"] = negative_sentiment
 comment_df["neutral_sentiment"] = neutral_sentiment
