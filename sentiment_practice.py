@@ -1,3 +1,5 @@
+# Based on code from: https://programminghistorian.org/en/lessons/sentiment-analysis
+
 # INSTALL FIRST
 # Make sure you install the VADER lexicon and sentiment analysis before running this
 # Just remove the hashtags from the code below
