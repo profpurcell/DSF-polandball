@@ -1,7 +1,6 @@
  # Carson Comments:
     # Definitely found and downloaded more comics
     # It saved exactly 69 more comics
-    # Nice
     # But I'm pretty sure there's over 100 w/o extensions in this year?
     # Good thing we got a list for that
     # Wait a sec
