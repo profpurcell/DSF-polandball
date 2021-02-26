@@ -15,8 +15,8 @@ df_cleaned = df1[df1['text']!= "[deleted]"]
 # Create dataframe with "text" == "[deleted]"
 
 df_deleted = df1[df1['text'] == "[deleted]"]
-    # This didn't work
-print(df_deleted[:10])
+
+#print(df_deleted[:10])
 
 
 # The following code puts all entries with "text" = NaN into their own dataframe
