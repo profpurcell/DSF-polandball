@@ -1,5 +1,18 @@
+<<<<<<< HEAD
  # start: 466 items
  # end: 535 items
+=======
+ # Carson Comments:
+    # Definitely found and downloaded more comics
+    # It saved exactly 69 more comics
+    # But I'm pretty sure there's over 100 w/o extensions in this year?
+    # Good thing we got a list for that
+    # Wait a sec
+    # How do I save/print otherList and checkList?
+    # VSCode says otherList and checkList are not defined
+ 
+ # It is probably possible to do this better, but this at least seems to work reasonably well
+>>>>>>> 4069414091ad92d39249ad07ea96bee84eafe06a
 
 import pandas as pd
 import requests
@@ -46,6 +59,7 @@ def applyFunc(row):
 df.apply(applyFunc, axis=1)
 
 
+<<<<<<< HEAD
 df_otherList = DataFrame(otherList, columns = ["url"])
 df_otherList.to_csv("otherList2012.csv")
 
@@ -56,3 +70,8 @@ df_corruptedList = DataFrame(corruptedList, columns = ["name"])
 df_corruptedList.to_csv("corruptedList2012.csv")
 
 # If running this as a normal python file (not in Jupyter Notebook), make sure to save or print otherList and corruptedList
+=======
+# I haven't checked for corrupted files yet
+# now let's check for corrupted files
+# code based on https://opensource.com/article/17/2/python-tricks-artists
+>>>>>>> 4069414091ad92d39249ad07ea96bee84eafe06a
