@@ -6,6 +6,8 @@ import pandas as pd
     # not working for commentList2013
     # Error:
         # pandas.errors.ParserError: Error tokenizing data. C error: Buffer overflow caught - possible malformed input file.
+    # Also, everything after 2013 has thrown this warning for me:
+        # sys:1: DtypeWarning: Columns (3) have mixed types. Specify dtype option on import or set low_memory=False.
 
 # REMEMBER:
     # Change the file path within pd.read_csv to whatever file you want to clean

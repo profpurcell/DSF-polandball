@@ -7,13 +7,14 @@ from psaw import PushshiftAPI
 import datetime as dt
 
 def main():
+    reddit = praw.Reddit(client_id="7HuVGrxZwvj0fA",
+                     client_secret="07pRQvVQW9suS_oPCDeYGRp4yeQ",
+                     user_agent="jupyter_notebook:test_reddit_api /u/Asterisk13")
     # set up connection
-    reddit = praw.Reddit(client_id="",
-        client_secret="",
-        user_agent="")
+
     
     api = PushshiftAPI(reddit)
-    start = int(dt.datetime(2020,10,2).timestamp())
+    start = int(dt.datetime(2020,10,6).timestamp())
     end = int(dt.datetime(2020,1,1).timestamp())
 
     # set up variables
@@ -24,7 +25,7 @@ def main():
     # loop through submissions
     
     # REMEMBER: Make an empty "raw_comics" folder before running
-    for submission in api.search_submissions(before=start, after=end, subreddit="polandball", limit=10):
+    for submission in api.search_submissions(before=start, after=end, subreddit="polandball"):
         submissionList.append(getSubmissionData(submission))
         # comments
         submission.comments.replace_more(limit=None)

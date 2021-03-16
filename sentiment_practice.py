@@ -1,3 +1,5 @@
+# Based on code from: https://programminghistorian.org/en/lessons/sentiment-analysis
+
 # INSTALL FIRST
 # Make sure you install the VADER lexicon and sentiment analysis before running this
 # Just remove the hashtags from the code below
@@ -32,7 +34,7 @@ def analyze_sentiment(row):
     positive_sentiment.append(scores["pos"])
     return(scores["compound"])
 
-# Create new columna that contain each sentiment score
+# Create new columns that contain each sentiment score
 comment_df["compound_sentiment"] = comment_df.apply(analyze_sentiment, axis = 1)
 comment_df["negative_sentiment"] = negative_sentiment
 comment_df["neutral_sentiment"] = neutral_sentiment
